@@ -1,0 +1,8 @@
+public void selectExample(String parameter) throws SQLException {
+   Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+   String query = "SELECT * FROM USERS WHERE lastname = " + parameter;
+   Statement statement = connection.createStatement();
+   ResultSet result = statement.executeQuery(query);
+
+   printResult(result);
+}
